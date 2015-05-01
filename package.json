@@ -1,0 +1,26 @@
+{
+  "author": "Dennis Torres <djtorres0@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/psirenny/derby-useragent/issues"
+  },
+  "dependencies": {
+    "ua-parser-js": "^0.7.6"
+  },
+  "description": "User agent detection for Derby JS.",
+  "keywords": [
+    "derby",
+    "useragent"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "derby-useragent",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psirenny/derby-useragent.git"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "1.0.0"
+}
