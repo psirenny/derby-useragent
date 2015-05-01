@@ -4,11 +4,13 @@
     "url": "https://github.com/psirenny/derby-useragent/issues"
   },
   "dependencies": {
+    "lodash": "^3.7.0",
     "ua-parser-js": "^0.7.6"
   },
   "description": "User agent detection for Derby JS.",
   "keywords": [
     "derby",
+    "detect",
     "useragent"
   ],
   "license": "MIT",
@@ -19,8 +21,5 @@
     "type": "git",
     "url": "https://github.com/psirenny/derby-useragent.git"
   },
-  "scripts": {
-    "test": "node test"
-  },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
