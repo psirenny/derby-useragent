@@ -1,7 +1,7 @@
 Derby Useragent
 ===============
 
-User agent detection for [Derby JS](http://derbyjs.com).
+User agent detection for [Derby JS](http://derbyjs.com). Works on the server or the browser.
 
 Installation
 ------------
@@ -14,7 +14,7 @@ Usage
 Add the middleware:
 
     var app = derby.createApp('...', __filename);
-    app.serverUse(module, 'derby-useragent');
+    app.get('*', require('derby-useragent')());
 
 Access the useragent data:
 
