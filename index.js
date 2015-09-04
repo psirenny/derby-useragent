@@ -6,16 +6,17 @@ var UAParser = require('ua-parser-js');
 module.exports = function (options) {
   var defs = {path: '$useragent'};
   var opts = _.merge({}, defs, options || {});
-  var uaparser = new UAParser();
 
   return function (page, model, params, next) {
+    var parser = new UAParser();
+
     if (page.app.derby.util.isServer) {
-      uaparser.setUA(page.req.headers['user-agent']);
+      parser.setUA(page.req.headers['user-agent']);
     } else {
-      uaparser.setUA(window.navigator.userAgent);
+      parser.setUA(window.navigator.userAgent);
     }
 
-    _.each(uaparser.getResult(), function (val, key) {
+    _.each(parser.getResult(), function (val, key) {
       model.set(opts.path + '.' + key, val);
     });
 
