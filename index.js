@@ -10,11 +10,11 @@ module.exports = function (options) {
   return function (page, model, params, next) {
     var parser = new UAParser();
 
-    if (page.app.derby.util.isServer) {
-      parser.setUA(page.req.headers['user-agent']);
-    } else {
-      parser.setUA(window.navigator.userAgent);
+    if (!page.app.derby.util.isServer) {
+      _.set(page, 'req.headers.user-agent', window.navigator.userAgent);
     }
+
+    parser.setUA(page.req.headers['user-agent']);
 
     _.each(parser.getResult(), function (val, key) {
       model.set(opts.path + '.' + key, val);
